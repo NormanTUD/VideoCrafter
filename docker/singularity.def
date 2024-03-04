@@ -8,7 +8,7 @@ DEBIAN_FRONTEND=noninteractive
 # Install dependencies
 apt-get update
 
-apt-get install -y git ffmpeg libgl1-mesa-glx
+apt-get install -y git ffmpeg libgl1-mesa-glx gcc
 
 cd /
 git clone --depth 1 "https://github.com/NormanTUD/VideoCrafter.git"
@@ -18,9 +18,9 @@ mkdir -p /VideoCrafter
 
 cd /VideoCrafter 
 
-ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r requirements_xformer.txt
-
+ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install --upgrade numpy==1.24.2
 ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r requirements.txt
+# ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r requirements_xformer.txt
 
 ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install cog
 

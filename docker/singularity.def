@@ -1,0 +1,35 @@
+Bootstrap: docker
+From: pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime
+Stage: spython-base
+
+%post
+DEBIAN_FRONTEND=noninteractive
+
+# Install dependencies
+apt-get update
+
+apt-get install -y git ffmpeg libgl1-mesa-glx
+
+cd /
+git clone --depth 1 "https://github.com/NormanTUD/VideoCrafter.git"
+cd /VideoCrafter 
+
+mkdir -p /VideoCrafter
+
+cd /VideoCrafter 
+
+pip install -r requirements_xformer.txt
+
+pip install -r requirements.txt
+
+pip install cog
+
+# expose 7860
+%environment
+export DEBIAN_FRONTEND=noninteractive
+%runscript
+cd /VideoCrafter
+exec /bin/bash "$@"
+%startscript
+cd /VideoCrafter
+exec /bin/bash "$@"

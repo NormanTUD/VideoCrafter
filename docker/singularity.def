@@ -18,11 +18,11 @@ mkdir -p /VideoCrafter
 
 cd /VideoCrafter 
 
-pip install -r requirements_xformer.txt
+ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r requirements_xformer.txt
 
-pip install -r requirements.txt
+ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install -r requirements.txt
 
-pip install cog
+ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install cog
 
 # expose 7860
 %environment

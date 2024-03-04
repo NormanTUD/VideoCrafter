@@ -457,3 +457,11 @@ Thanks the authors for sharing their awesome codebases!
 ## 📢 Disclaimer
 We develop this repository for RESEARCH purposes, so it can only be used for personal/research/non-commercial purposes.
 ****
+
+## Docker example (just for me...)
+
+```commandline
+cd docker
+docker build .
+docker run 6c164433de0d bash /VideoCrafter/scripts/run_image2video.sh --ckpt_path "models/base_t2v/model.ckpt" --config_path "models/base_t2v/model_config.yaml" --prompt "astronaut riding a horse" --save_dir "results/" --n_samples 1 --batch_size 1 --seed 1000 --show_denoising_progress
+```

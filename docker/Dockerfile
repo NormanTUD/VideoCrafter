@@ -13,6 +13,8 @@ RUN cd / && git clone "https://github.com/VideoCrafter/VideoCrafter.git" && cd /
 
 WORKDIR /VideoCrafter
 
-RUN if [ "$USE_XFORMERS" = "1" ]; then cd /VideoCrafter && pip install -r requirements_xformer.txt; else cd /VideoCrafter && pip install -r requirements.txt; fi
+RUN cd /VideoCrafter && pip install -r requirements_xformer.txt; else cd /VideoCrafter && pip install -r requirements.txt
+
+RUN pip install cog
 
 expose 7860

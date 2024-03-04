@@ -13,7 +13,7 @@ docker build -t videocrafter:"${COMMIT_HASH}"-xformers-full -f docker/models.Doc
 docker tag videocrafter:"${COMMIT_HASH}"-xformers-full wawa9000/videocrafter:"${COMMIT_HASH}"-xformers-full
 docker tag videocrafter:"${COMMIT_HASH}"-xformers-full wawa9000/videocrafter:latest-xformers-full
 
-docker push wawa9000/videocrafter:"${COMMIT_HASH}"-xformers
-docker push wawa9000/videocrafter:latest-xformers
-docker push wawa9000/videocrafter:"${COMMIT_HASH}"-xformers-full
-docker push wawa9000/videocrafter:latest-xformers-full
+#docker push wawa9000/videocrafter:"${COMMIT_HASH}"-xformers
+#docker push wawa9000/videocrafter:latest-xformers
+#docker push wawa9000/videocrafter:"${COMMIT_HASH}"-xformers-full
+#docker push wawa9000/videocrafter:latest-xformers-full
